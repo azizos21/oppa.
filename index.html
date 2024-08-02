@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oppa Delivery</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <img src="image/aziz.jpg" alt="Logo Oppa Delivery" class="logo">
+        <nav>
+            <ul>
+                <li><a href="#home">Accueil</a></li>
+                <li><a href="#about">À propos de nous</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#photos">Photos</a></li>
+            </ul>
+        </nav>
+        <div class="contact-info">
+            <p>TEL :
+                <br> +216 28 917 555
+                <br> +216 28 917 557
+            </p>
+        </div>
+    </header>
+
+    <section id="home" class="hero">
+        <h1>Services de Livraison Fiables</h1>
+        <p>Des livraisons rapides et sécurisées à travers Ariana, Tunisie</p>
+        <a href="https://oppa-delivery.tn/platform/welcome" class="cta-button" target="_blank">Connexion</a>
+    </section>
+
+    <section id="about" class="about-us">
+        <h2>À propos de nous</h2>
+        <div class="container">
+            <h1>OPPA: Votre Solution Logistique Complète</h1>
+            <div class="content">
+                <p>OPPA est une société tunisienne spécialisée dans la livraison de colis sur tout le territoire tunisien. Nous proposons des solutions logistiques évolutives et innovantes adaptées aux entreprises de toutes tailles.</p>
+            </div>
+            <h2>Notre Devise : Rapidité et Qualité de Service</h2>
+            <div class="content">
+                <p>Nous nous engageons à fournir un service rapide et de qualité irréprochable. Nos équipes veillent à l'acheminement optimal de vos produits vers vos clients.</p>
+            </div>
+            <h2>Gérez Vos Livraisons avec Efficacité</h2>
+            <div class="content">
+                <p>Utilisez notre plateforme pour contrôler et suivre vos envois en temps réel. Nous offrons également des services de stockage de marchandises, de confirmation de commandes, et d'emballage gratuit, avec des solutions automatisées pour la gestion et le suivi de vos livraisons.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="services">
+        <h2>Nos Services</h2>
+        <ul>
+            <li>Pas de coûts fixes à part le stockage, sans engagement pour plus de flexibilité</li>
+            <li>Solution logistique sur tout le territoire tunisien</li>
+            <li>Application web et mobile gratuite</li>
+            <li>Gestion innovante et évolutive</li>
+        </ul>
+    </section>
+
+    <section id="photos" class="photos-slider">
+        <h2>Photos</h2>
+        <div class="slider">
+            <div class="slides">
+                <div class="slide"><img src="image/photo1.jpg" alt="Photo 1"></div>
+                <div class="slide"><img src="image/photo2.jpg" alt="Photo 2"></div>
+                <div class="slide"><img src="image/photo3.jpg" alt="Photo 3"></div>
+                <div class="slide"><img src="image/photo4.jpg" alt="Photo 4"></div>
+                <div class="slide"><img src="image/photo5.jpg" alt="Photo 5"></div>
+            </div>
+            <div class="dots">
+                <span class="dot" onclick="currentSlide(0)"></span>
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+                <span class="dot" onclick="currentSlide(4)"></span>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-us">
+        <h2>Contactez-nous</h2>
+        <div class="social-links">
+            <a href="https://www.facebook.com/profile.php?id=61550841222701" target="_blank" class="social-link">
+                <img src="image/facebook.png" alt="Facebook">
+            </a>
+            <a href="https://www.instagram.com/oppacompanylogistic/?hl=fr" target="_blank" class="social-link">
+                <img src="image/instagram.png" alt="Instagram">
+            </a>
+        </div>
+        <p>Adresse : Ariana Hay el Ghazela, Tunisie</p>
+        <p>Email : contact@oppa-delivery.com</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Oppa Delivery. Tous droits réservés.</p>
+        <ul>
+            <li><a href="#">Politique de confidentialité</a></li>
+            <li><a href="#">Conditions d'utilisation</a></li>
+        </ul>
+    </footer>
+
+    <script>
+        let slideIndex = 0;
+        showSlides(slideIndex);
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            let slides = document.getElementsByClassName("slide");
+            let dots = document.getElementsByClassName("dot");
+            if (n >= slides.length) { slideIndex = 0 }
+            if (n < 0) { slideIndex = slides.length - 1 }
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (let i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex].style.display = "block";
+            dots[slideIndex].className += " active";
+        }
+
+        setInterval(() => {
+            showSlides(slideIndex += 1);
+        }, 3000);
+    </script>
+</body>
+</html>
